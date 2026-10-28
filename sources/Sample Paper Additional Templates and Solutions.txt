@@ -1,0 +1,70 @@
+Q4 Template:
+
+Azure plc	
+Statement of proxfit or loss for the year ended 30 June 20X3	
+	
+	£’000
+Revenue	25,180
+Cost of sales	(10,023)
+Gross profit	15,157
+General and administrative expenses	(4,578)
+Other operating expenses	(2,354)
+Operating profit	8,225
+Interest income	35
+Profit before financing and income taxes	8,260
+Interest expenses on borrowings and lease liabilities	(849)
+Profit before income taxes	7,411
+Income tax expense	(1,640)
+PROFIT	5,771
+
+Q8 Template:
+
+Lamlash plc		
+Consolidated statement of financial position as at 31 December 20X3 (extracts)		
+		
+	Lamlash group (excluding Brodick)	Brodick
+	£'000	£'000
+EQUITY		
+Share capital	2,000	1,000
+Share premium	970	-
+Retained earnings	89,568	3,085
+	92,538	4,085
+Non-controlling interests	19,870	-
+Total equity	112,408	4,085
+
+
+Q4 Solution:
+
+Azure plc						
+Statement of profit or loss for the year ended 30 June 20X3						
+	Draft	Discontinued	JE 2	JE 3	JE 4	Final
+	£’000	£’000	£’000			£'000
+Revenue	25,180	(4,330)				20,850
+Cost of sales	(10,023)	1,700				(8,323)
+Gross profit	15,157					12,527
+General and administrative expenses	(4,578)	290		20		(4,268)
+Other operating expenses	(2,354)	980			(933)	(2,307)
+Operating profit	8,225					5,952
+Interest income	35					35
+Profit before financing and income taxes	8,260					5,987
+Interest expenses on borrowings and lease liabilities	(849)					(849)
+Profit before income taxes	7,411					5,138
+Income tax expense	(1,640)	210				(1,430)
+Profit from continuing operations						3,708
+Profit from discontinued operations		1,150	(55)			1,095
+PROFIT	5,771					4,803
+
+Q8 Solution:
+
+Lamlash plc								
+Consolidated statement of financial position as at 31 December 20X3 (extracts)								
+								
+	Lamlash group (excluding Brodick)	Brodick	JE 1	JE 3	JE 6	JE 8	JE 9 (Final Step)	Total
+	£'000	£'000	£'000	£'000	£'000	£'000	£'000	£'000
+EQUITY								
+Share capital	2,000	1,000	(1,000)					2,000
+Share premium	970	-						970
+Retained earnings	89,568	3,085	(2,760)				(711)	89,182
+	92,538	4,085						92,152
+Non-controlling interests	19,870	-	2,000	171	(42)	(3)		21,996
+Total equity	112,408	4,085						114,148
