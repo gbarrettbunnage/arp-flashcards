@@ -589,9 +589,10 @@ body.appendix-below .appendix-divider{display:none!important}
 .arp-reference-link{text-decoration:none}.arp-reference-link:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 #flashcard{touch-action:pan-y pinch-zoom}
 #flashcard .table-scroll,#flashcard .aa-source,#flashcard [role="region"]{touch-action:pan-x pan-y pinch-zoom!important}
+
+.session-tools{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap}.session-tools label,.session-tools span,.session-tools select,.session-tools input{font:11px Helvetica,Arial,sans-serif}.session-tools label{color:var(--text-muted)}.session-tools input,.session-tools select{color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:6px}.session-tools input{width:53px}.session-tools .tool-btn{padding:6px 10px;font-size:11px}.study-clock{font:600 15px Helvetica,Arial,sans-serif!important;font-variant-numeric:tabular-nums;min-width:52px}.timer-state{color:var(--text-muted);font-size:10px!important}.study-meter{width:70px;height:4px;background:var(--border);border-radius:4px;overflow:hidden}.study-meter i{display:block;height:100%;background:var(--accent3);width:0}.stats-tabs,.stats-data-tools{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.stats-data-tools{padding-top:15px;border-top:1px solid var(--border)}.stats-types{margin:12px 0 18px}.stats-types .chip{font-size:11px;padding:6px 11px}.stats-pane[hidden]{display:none!important}.rating-range{height:86px!important}.rating-range input[type=range]{position:relative!important;inset:auto!important;display:block;height:38px!important;pointer-events:auto!important}.rating-range input::-webkit-slider-runnable-track{background:var(--border2)!important}.rating-range input::-moz-range-track{background:var(--border2)!important}.rating-range .rating-track,.rating-range .rating-selection{display:none}.manager-tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.manager-tools input,.manager-tools select{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:7px;max-width:100%;font-size:12px}.manager-list{max-height:220px;overflow:auto}.manager-list button{display:block;width:100%;text-align:left;white-space:normal;margin:5px 0}.manager-preview{padding:14px;border:1px solid var(--border);border-radius:10px;margin-top:14px}.manager-preview img{max-width:100%;height:auto}.manager-preview details{margin:12px 0}.manager-preview summary{cursor:pointer}.time-metrics{display:flex;gap:20px;flex-wrap:wrap;margin:16px 0}.time-metrics b{display:block;font-size:24px}.time-metrics span{font-size:11px;color:var(--text-muted)}
 </style>
 </head>
-<body class="light">
 
 <header>
   <div class="logo">
@@ -948,6 +949,7 @@ body.appendix-below .appendix-divider{display:none!important}
 <script src="cards/workshop2-slides.js"></script>
 <script src="cards/workshop3-slides.js"></script>
 <script src="cards/workshop-source-enrichments.js"></script>
+<script src="cards/mapq-2026.js"></script>
 <script>
 // ═════════════════════════════════════════════════════════════════════════════
 //  CONFIG  —  ⭐ SET THIS PER COURSE SITE ⭐  (the only block you normally edit)
@@ -958,7 +960,7 @@ const SITE = {
   qualification: 'ICAS',                       // e.g. 'ACCA' · 'CIMA' · 'ICAS'
   provider:      '',                           // optional, e.g. 'Kaplan' · 'BPP' · 'Accowtancy' ('' hides it)
   courseFull:    'Advanced Reporting and Performance',  // full course name → MAIN header line + page title
-  tagline:       'ICAS ARP · collated practice flashcards'   // descriptor shown under the course name
+  tagline:       'ICAS · collated practice flashcards'   // descriptor shown under the course name
 };
 
 // Cards can come from several providers (Kaplan, BPP, Accowtancy, official past
@@ -1029,7 +1031,7 @@ SP_CARDS.forEach(c   => CARDS.push({ ...c, type:'SP',   isHTML:true, ref:'' }));
 MP_CARDS.forEach(c   => CARDS.push({ ...c, type:'MP',   isHTML:true, ref:'' }));
 TERM1_2026_CARDS.forEach(c => CARDS.push({ ...c, isHTML:true, ref:'' }));
 // Normalise provider (missing → default bucket) and collect the distinct set.
-const ADDED_CARD_GLOBALS = ["ARP_DIRECTORS_REMUNERATION_CARDS","ARP_WORKSHOP2_BANK_CARDS","ARP_WORKSHOP3_BANK_CARDS","ARP_WORKSHOP2_SLIDES_CARDS","ARP_WORKSHOP3_SLIDES_CARDS","ARP_WS1_CARDS","ARP_PAST_T3_2025_CARDS","ARP_PAST_T4_2025_CARDS","ARP_PAST_T2_2026_CARDS","ARP_REV_M6_APQ_CARDS","ARP_REV_M7_APQ_CARDS","ARP_REV_M8_APQ_CARDS","ARP_REV_M9_APQ_CARDS","ARP_REV_AAPQ_CARDS","ARP_M2_ICQ_CARDS", "ARP_M3_ICQ_CARDS", "ARP_M4_ICQ_CARDS", "ARP_M5_ICQ_CARDS", "ARP_M1_ICQ_SUPPLEMENT", "ARP_M2_APQ_CARDS", "ARP_M3_APQ_CARDS", "ARP_M4_APQ_CARDS", "ARP_M5_APQ_CARDS", "ARP_ADDON_M6_ICQ_CARDS", "ARP_ADDON_M7_ICQ_CARDS", "ARP_ADDON_M8_ICQ_CARDS", "ARP_ADDON_M9_ICQ_CARDS", "ARP_ADDON_M4_SB_CARDS", "ARP_ADDON_M5_SB_CARDS", "ARP_ADDON_M6_SB_CARDS", "ARP_ADDON_M8_SB_CARDS", "ARP_ADDON_M1_SB_CARDS", "ARP_ADDON_M9_SB_CARDS", "ARP_ADDON_M7_SB_CARDS", "ARP_ADDON_M0_SP_CARDS"];
+const ADDED_CARD_GLOBALS = ["ARP_MAPQ_2026_CARDS","ARP_DIRECTORS_REMUNERATION_CARDS","ARP_WORKSHOP2_BANK_CARDS","ARP_WORKSHOP3_BANK_CARDS","ARP_WORKSHOP2_SLIDES_CARDS","ARP_WORKSHOP3_SLIDES_CARDS","ARP_WS1_CARDS","ARP_PAST_T3_2025_CARDS","ARP_PAST_T4_2025_CARDS","ARP_PAST_T2_2026_CARDS","ARP_REV_M6_APQ_CARDS","ARP_REV_M7_APQ_CARDS","ARP_REV_M8_APQ_CARDS","ARP_REV_M9_APQ_CARDS","ARP_REV_AAPQ_CARDS","ARP_M2_ICQ_CARDS", "ARP_M3_ICQ_CARDS", "ARP_M4_ICQ_CARDS", "ARP_M5_ICQ_CARDS", "ARP_M1_ICQ_SUPPLEMENT", "ARP_M2_APQ_CARDS", "ARP_M3_APQ_CARDS", "ARP_M4_APQ_CARDS", "ARP_M5_APQ_CARDS", "ARP_ADDON_M6_ICQ_CARDS", "ARP_ADDON_M7_ICQ_CARDS", "ARP_ADDON_M8_ICQ_CARDS", "ARP_ADDON_M9_ICQ_CARDS", "ARP_ADDON_M4_SB_CARDS", "ARP_ADDON_M5_SB_CARDS", "ARP_ADDON_M6_SB_CARDS", "ARP_ADDON_M8_SB_CARDS", "ARP_ADDON_M1_SB_CARDS", "ARP_ADDON_M9_SB_CARDS", "ARP_ADDON_M7_SB_CARDS", "ARP_ADDON_M0_SP_CARDS"];
 ADDED_CARD_GLOBALS.forEach(g=>(window[g]||[]).forEach(c=>CARDS.push({...c,ref:c.ref||""})));
 // Historical summative-paper files used MP. Reclassify only known past-paper IDs/globals.
 const pastPaperIds=new Set(['ARP_PAST_T3_2025_CARDS','ARP_PAST_T4_2025_CARDS','ARP_PAST_T2_2026_CARDS'].flatMap(g=>(window[g]||[]).map(c=>c.id)));
@@ -1118,9 +1120,10 @@ function normalizeProgress(p){
   if(!p) return emptyProgress();
   if(p.cards) {  // already v2
     const out = emptyProgress();
-    Object.keys(p.cards).forEach(id => {
+    out.studyTime=Array.isArray(p.studyTime)?p.studyTime.filter(e=>e&&Number.isFinite(e.from)&&Number.isFinite(e.to)&&e.to>e.from):[];
+Object.keys(p.cards).forEach(id => {
       const r = p.cards[id] || {};
-      out.cards[id] = { streak:+r.streak||0, miss:+r.miss||0, reviews:+r.reviews||0, last:+r.last||0, star:!!r.star, confidence:sanitizeConfidence(r.confidence) };
+      out.cards[id] = { streak:+r.streak||0, miss:+r.miss||0, reviews:+r.reviews||0, last:+r.last||0, star:!!r.star, statusOverride:['unseen','review','learning','mastered'].includes(r.statusOverride)?r.statusOverride:null, confidence:sanitizeConfidence(r.confidence) };
     });
     return out;
   }
@@ -1217,6 +1220,7 @@ function saveSettings(){
 //  STATUS DERIVATION  (mastered / learning / review / unseen)
 // ═════════════════════════════════════════════════════════════════════════════
 function cardStatus(id){
+ if(rec(id)&&rec(id).statusOverride)return rec(id).statusOverride;
   const r = rec(id);
   if(!r || !r.reviews) return 'unseen';
   if(r.streak >= masteryN) return 'mastered';
@@ -1391,7 +1395,7 @@ function buildDeck(opts){clearReturnHistory();
   const pool = getFiltered();
   // Exclude cards already answered this session so they aren't requizzed.
   const studyPool = pool.filter(c => !sessionAnswered.has(c.id));
-  deck = orderDeck(studyPool);
+  deck = capSession(orderDeck(studyPool));
   if(opts.resume && settings.resumeId){
     const p = deck.findIndex(c => c.id === settings.resumeId);
     idx = p >= 0 ? p : 0;
@@ -1628,6 +1632,7 @@ function markCard(knew){
   const card = deck[idx];
   if(card){
     const r = ensureRec(card.id);
+ if(r.statusOverride){r.streak=r.statusOverride==='mastered'?masteryN:r.statusOverride==='learning'?1:0;delete r.statusOverride;}
     const already = sessionAnswered.has(card.id);
     if(knew){
       if(!already) r.streak += 1;            // one streak step per session
@@ -1676,7 +1681,7 @@ function toggleStar(){
   if(!card) return;
   const r = ensureRec(card.id);
   r.star = !r.star;
-  if(!r.star && !r.reviews && !r.miss && !r.streak) delete progress.cards[card.id];
+  if(!r.star && !r.reviews && !r.miss && !r.streak && !r.statusOverride) delete progress.cards[card.id];
   saveProgress();
   updateStarToggle(card);
   updateProgress(); updateHeaderStats();
@@ -1745,7 +1750,7 @@ function startDrill(){
   clearReturnHistory();sessionAnswered = new Set();
   drillMode = true;
   document.getElementById('drill-btn').classList.add('active');
-  deck = keepChainsTogether(shuffle(pool));
+  deck = capSession(keepChainsTogether(shuffle(pool)));
   idx = 0; knewCount = 0; missedCount = 0;
   updateSummary(pool.length);
   renderDeck();
@@ -1991,7 +1996,7 @@ const MOD_LABELS  = { Module1:'M1 · Presentation', Module2:'M2 · Assets', Modu
 
 function groupStats(keyFn){
   const m = {};
-  CARDS.forEach(c => {
+  statsCards().forEach(c => {
     const keys = keyFn(c);
     (Array.isArray(keys)?keys:[keys]).forEach(k=>{
     if(!m[k]) m[k] = { total:0, mastered:0, review:0, learning:0, miss:0 };
@@ -2033,7 +2038,7 @@ function weakRows(map, labels){
   }).join('') + '</div>';
 }
 function mostMissed(){
-  const arr = CARDS.map(c => ({ c, miss:(rec(c.id) && rec(c.id).miss) || 0 }))
+  const arr = statsCards().map(c => ({ c, miss:(rec(c.id) && rec(c.id).miss) || 0 }))
     .filter(x => x.miss > 0).sort((a, b) => b.miss - a.miss).slice(0, 8);
   if(arr.length === 0) return '';
   return '<div class="stats-block"><h4>Most-missed cards</h4><div class="miss-list">' +
@@ -2045,8 +2050,8 @@ function heatColor(frac){ return `rgba(42,152,120,${(0.10 + frac * 0.90).toFixed
 function heatmapHtml(){
   const typeOrder = ['ICQ','SB','APQ','AAPQ','WS','SP','MP','PP'];
   const modOrder  = ["Module1", "Module2", "Module3", "Module4", "Module5", "Module6", "Module7", "Module8", "Module9"];
-  const types = typeOrder.filter(t => CARDS.some(c => c.type === t));
-  const mods  = modOrder.filter(m => CARDS.some(c => (c.modules||[c.module]).includes(m)));
+  const types = typeOrder.filter(t => statsCards().some(c => c.type === t));
+  const mods  = modOrder.filter(m => statsCards().some(c => (c.modules||[c.module]).includes(m)));
   if(!types.length || !mods.length) return '';
   let html = '<div class="stats-block"><details class="rating-disclosure"><summary>Mastery heatmap — module × type</summary><div class="heat-wrap"><table class="heat"><thead><tr><th></th>';
   types.forEach(t => { html += `<th title="${escapeHtml(TYPE_LABELS[t] || t)}">${t}</th>`; });
@@ -2054,7 +2059,7 @@ function heatmapHtml(){
   mods.forEach(m => {
     html += `<tr><th class="rowh" title="${escapeHtml(MOD_LABELS[m] || m)}">M${m.replace('Module','')}</th>`;
     types.forEach(t => {
-      const cells = CARDS.filter(c => (c.modules||[c.module]).includes(m) && c.type === t);
+      const cells = statsCards().filter(c => (c.modules||[c.module]).includes(m) && c.type === t);
       const total = cells.length;
       if(!total){ html += '<td class="empty">·</td>'; return; }
       const mastered = cells.filter(c => cardStatus(c.id) === 'mastered').length;
@@ -2069,12 +2074,12 @@ function heatmapHtml(){
 }
 function openStats(){
   let mastered = 0, learning = 0, review = 0, star = 0;
-  CARDS.forEach(c => {
+  statsCards().forEach(c => {
     const s = cardStatus(c.id);
     if(s === 'mastered') mastered++; else if(s === 'learning') learning++; else if(s === 'review') review++;
     if(rec(c.id) && rec(c.id).star) star++;
   });
-  const unseen = CARDS.length - mastered - learning - review;
+  const unseen = statsCards().length - mastered - learning - review;
   const masteryCtrl = `<div class="mastery-ctrl">Counts as mastered after
       <input type="number" id="mastery-input" min="1" max="9" value="${masteryN}" onchange="setMasteryN(this.value)"> correct sittings in a row</div>`;
   const overall = `<div class="stats-overall">
@@ -2272,7 +2277,7 @@ document.addEventListener('keydown', e => {
 window.addEventListener('resize', () => { if(deck.length && idx < deck.length) setHeightForCurrentFace(); });
 
 function applyHeaderAndCopy(){
-  document.getElementById('logo-tag').textContent = SITE.qualification || '';
+ // document.getElementById('logo-tag').textContent = SITE.qualification || '';
   document.getElementById('logo-title').textContent = SITE.courseFull;   // course name is the main line
   document.getElementById('logo-sub').textContent = SITE.tagline;
   document.getElementById('logo-sub').hidden = !SITE.tagline;
@@ -2317,7 +2322,7 @@ function ratingWindow(){
 }
 function ratingModules(){return Array.isArray(settings.ratingModules)?settings.ratingModules:[];}
 function ratingBounds(){const r=ratingWindow(),a=new Date(),b=new Date();a.setHours(0,0,0,0);a.setDate(a.getDate()-r.start);b.setHours(23,59,59,999);b.setDate(b.getDate()-r.end);return {from:+a,to:+b};}
-function selectedRatingEvents(){const b=ratingBounds(),mods=ratingModules();return confidenceEvents().filter(e=>e.at>=b.from&&e.at<=b.to&&(!mods.length||(e.card.modules||[e.card.module]).some(m=>mods.includes(m))));}
+function selectedRatingEvents(){const b=ratingBounds(),mods=ratingModules();return confidenceEvents().filter(e=>statsTypeMatches(e.card)&&e.at>=b.from&&e.at<=b.to&&(!mods.length||(e.card.modules||[e.card.module]).some(m=>mods.includes(m))));}
 function ratingRangeChanged(which,input){
  const r=ratingWindow(),v=Math.max(0,Math.min(90,Number(input.value)||0));
  if(which==='start')r.start=Math.max(90-v,r.end);else r.end=Math.min(90-v,r.start);
@@ -2380,6 +2385,9 @@ function prepareScrollAreas(root){
  });
 }
 
+function capSession(cards){const n=Math.max(0,Math.min(10000,Math.floor(Number(settings.sessionLimit)||0)));return n?cards.slice(0,n):cards;}
+function statsTypeMatches(c){return !Array.isArray(settings.statsTypes)||settings.statsTypes.includes(c.type);}
+function statsCards(){return CARDS.filter(statsTypeMatches);}
 (function init(){
   if(!store.available) document.getElementById('storage-banner').classList.remove('hidden');
 if(ADDED_CARD_GLOBALS.some(g=>!Array.isArray(window[g]))){const b=document.getElementById("storage-banner");b.textContent="Card file missing. Extract the entire ZIP, keeping cards/ and assets/ beside index.html. Missing: "+ADDED_CARD_GLOBALS.filter(g=>!Array.isArray(window[g])).join(", ");b.classList.remove("hidden");}
@@ -2499,6 +2507,41 @@ function updateAppendixPanelWidth(){
  card.addEventListener('touchcancel',()=>{gesture=null;},{passive:true});
  card.addEventListener('click',e=>{if(performance.now()<suppressUntil){e.preventDefault();e.stopImmediatePropagation();}},true);
 })();
+</script>
+
+<script>
+let studyRunning=false,studyFrom=0,studyCard='',studySession=String(Date.now()),studyDisplay=0,statsTab='progress',managerId=null,managerPage=0;
+const dataButtons=['exportProgress()','triggerImport()','resetProgress()'].map(action=>document.querySelector('button[onclick="'+action+'"]')).filter(Boolean);
+const dataDock=document.createElement('div');dataDock.className='stats-data-tools';dataButtons.forEach(b=>dataDock.append(b));
+const tools=document.createElement('div');tools.className='session-tools';tools.innerHTML='<label for="session-limit">Session cards</label><input id="session-limit" type="number" min="0" max="10000" step="1" title="0 = all matching cards"><span style="color:var(--text-dim)">(0 = all)</span><button type="button" class="tool-btn" onclick="applySessionLimit()">New session</button><span class="tool-sep"></span><label for="study-mode">Study timer</label><select id="study-mode" onchange="setStudyMode(this.value)"><option value="stopwatch">Stopwatch</option><option value="focus">Focus countdown</option></select><label id="study-target-label" for="study-target">Minutes</label><input id="study-target" type="number" min="1" max="240" value="25" onchange="setStudyTarget(this.value)"><span class="study-clock" id="study-clock" role="timer">00:00</span><button type="button" class="tool-btn" id="study-toggle" onclick="studyToggle()">Start</button><button type="button" class="tool-btn" onclick="studyFinish()" title="Save time and reset the current timer">Finish</button><span class="timer-state" id="study-state" aria-live="polite">Ready</span><span class="study-meter" id="study-meter"><i></i></span>';
+const toolbarRow=document.querySelector('button[onclick="printCards()"]').parentElement;toolbarRow.insertBefore(tools,document.querySelector('button[onclick="openHelp()"]'));
+document.getElementById('session-limit').value=Number(settings.sessionLimit)||0;document.getElementById('study-mode').value=settings.studyMode==='focus'?'focus':'stopwatch';document.getElementById('study-target').value=Math.max(1,Math.min(240,Number(settings.studyTarget)||25));
+function applySessionLimit(){const input=document.getElementById('session-limit'),n=Number(input.value);if(!Number.isFinite(n)||n<0){flash('Enter 0 for all cards or a positive whole number.');return;}settings.sessionLimit=Math.min(10000,Math.floor(n));input.value=settings.sessionLimit;saveSettings();newSession();}
+function studyTargetMs(){return Math.max(1,Math.min(240,Number(settings.studyTarget)||25))*60000;}
+function studyElapsed(){return studyDisplay+(studyRunning?Date.now()-studyFrom:0);}
+function studyFlush(){if(!studyRunning)return;let now=Date.now();if(settings.studyMode==='focus')now=Math.min(now,studyFrom+Math.max(0,studyTargetMs()-studyDisplay));if(now>studyFrom){if(!Array.isArray(progress.studyTime))progress.studyTime=[];const last=progress.studyTime.at(-1);if(last&&last.to===studyFrom&&last.cardId===studyCard&&last.session===studySession)last.to=now;else progress.studyTime.push({from:studyFrom,to:now,cardId:studyCard,session:studySession});studyDisplay+=now-studyFrom;saveProgress();}studyFrom=Date.now();}
+function studyPaint(){const focus=settings.studyMode==='focus',elapsed=studyElapsed(),target=studyTargetMs();document.getElementById('study-clock').textContent=fmt((focus?Math.max(0,target-elapsed):elapsed)/1000);const b=document.getElementById('study-toggle');b.textContent=studyRunning?'Pause':studyDisplay?'Resume':'Start';b.setAttribute('aria-pressed',String(studyRunning));document.getElementById('study-state').textContent=focus&&elapsed>=target?'Target complete':studyRunning?'Running':studyDisplay?'Paused':'Ready';document.getElementById('study-target').hidden=!focus;document.getElementById('study-target-label').hidden=!focus;document.getElementById('study-meter').hidden=!focus;document.querySelector('#study-meter i').style.width=Math.min(100,elapsed/target*100)+'%';}
+function studyPause(){studyFlush();studyRunning=false;studyFrom=0;studyPaint();}
+function studyToggle(){if(studyRunning){studyPause();return;}if(!deck[idx]||idx>=deck.length){flash('Start a card session first.');return;}if(settings.studyMode==='focus'&&studyDisplay>=studyTargetMs()){studyDisplay=0;studySession=String(Date.now());}studyRunning=true;studyFrom=Date.now();studyCard=deck[idx].id;studyPaint();}
+function studyFinish(){studyPause();studyDisplay=0;studySession=String(Date.now());studyPaint();flash('Study time saved. Timer reset.');}
+function setStudyMode(mode){studyPause();studyDisplay=0;studySession=String(Date.now());settings.studyMode=mode==='focus'?'focus':'stopwatch';saveSettings();studyPaint();}
+function setStudyTarget(v){studyPause();settings.studyTarget=Math.max(1,Math.min(240,Math.floor(Number(v)||25)));document.getElementById('study-target').value=settings.studyTarget;studyDisplay=0;studySession=String(Date.now());saveSettings();studyPaint();}
+const oldShow=showCard;showCard=function(){studyFlush();oldShow();studyCard=deck[idx]?.id||'';if(!studyCard)studyPause();};
+const oldComplete=showComplete;showComplete=function(){studyPause();oldComplete();};
+const oldNew=newSession;newSession=function(){studyPause();studyDisplay=0;studySession=String(Date.now());oldNew();studyPaint();};
+const oldExport=exportProgress;exportProgress=function(){studyFlush();oldExport();};const oldReset=resetProgress;resetProgress=function(){studyPause();oldReset();};const oldImport=importProgress;importProgress=function(f){studyPause();oldImport(f);};
+setInterval(()=>{if(studyRunning){studyFlush();if(settings.studyMode==='focus'&&studyDisplay>=studyTargetMs()){studyPause();flash('Focus target complete. Your study time has been saved.');}studyPaint();}},1000);document.addEventListener('visibilitychange',()=>{if(document.hidden)studyPause();});window.addEventListener('pagehide',studyPause);
+function statsTypeToggle(t){const selected=new Set(Array.isArray(settings.statsTypes)?settings.statsTypes:CARD_TYPES);selected.has(t)?selected.delete(t):selected.add(t);settings.statsTypes=[...selected];saveSettings();openStats();}
+function statsTypesSet(all){settings.statsTypes=all?CARD_TYPES.slice():[];saveSettings();openStats();}
+function statsTypeChips(){const root=document.createElement('section');root.className='stats-types';const heading=document.createElement('div');heading.className='filter-label';heading.textContent='Question type';const actions=document.createElement('span');actions.className='filter-actions';[true,false].forEach(all=>{const b=document.createElement('button');b.type='button';b.className='filter-action-btn';b.textContent=all?'All':'None';b.onclick=()=>statsTypesSet(all);actions.append(b);});heading.append(actions);root.append(heading);const row=document.createElement('div');row.className='chip-row';document.querySelectorAll('#type-chips .chip').forEach(source=>{const b=document.createElement('button');b.type='button';b.className=source.className;b.classList.toggle('active',statsTypeMatches({type:source.dataset.type}));b.textContent=source.textContent;b.setAttribute('aria-pressed',String(statsTypeMatches({type:source.dataset.type})));b.onclick=()=>statsTypeToggle(source.dataset.type);row.append(b);});root.append(row);return root;}
+function timeStatsHtml(){const bounds=ratingBounds(),mods=ratingModules(),events=(progress.studyTime||[]).filter(e=>{const c=byId[e.cardId];return c&&statsTypeMatches(c)&&(!mods.length||(c.modules||[c.module]).some(m=>mods.includes(m)))&&e.to>bounds.from&&e.from<=bounds.to;});const duration=e=>Math.max(0,Math.min(e.to,bounds.to+1)-Math.max(e.from,bounds.from));const total=events.reduce((n,e)=>n+duration(e),0),sessions=new Set(events.map(e=>e.session)).size,days=new Map(),types=new Map();events.forEach(e=>{types.set(byId[e.cardId].type,(types.get(byId[e.cardId].type)||0)+duration(e));let from=Math.max(e.from,bounds.from),end=Math.min(e.to,bounds.to+1);while(from<end){const d=new Date(from),next=new Date(d);next.setHours(24,0,0,0);const stop=Math.min(+next,end),key=d.toLocaleDateString('en-GB');days.set(key,(days.get(key)||0)+stop-from);from=stop;}});return '<p>Active time only, excluding pauses and time while the page is hidden.</p><div class="time-metrics"><div><b>'+fmt(total/1000)+'</b><span>Total minutes:seconds</span></div><div><b>'+sessions+'</b><span>Timed sessions</span></div><div><b>'+days.size+'</b><span>Study days</span></div><div><b>'+fmt(sessions?total/sessions/1000:0)+'</b><span>Average per session</span></div></div><h4>Time by day</h4>'+([...days].reverse().map(([d,t])=>'<p>'+d+': '+fmt(t/1000)+'</p>').join('')||'<p>No recorded time matches these filters.</p>')+'<h4>Time by question type</h4>'+[...types].map(([t,ms])=>'<p>'+escapeHtml(TYPE_LABELS[t]||t)+': '+fmt(ms/1000)+'</p>').join('');}
+const baseStats=openStats;openStats=function(){studyFlush();baseStats();const root=document.getElementById('stats-body'),confidence=root.querySelector('.confidence-stats'),progressPane=document.createElement('section');progressPane.className='stats-pane';[...root.children].filter(n=>n!==confidence).forEach(n=>progressPane.append(n));const ratingPane=document.createElement('section');ratingPane.className='stats-pane';ratingPane.append(confidence);const timePane=document.createElement('section');timePane.id='time-results';timePane.className='stats-pane';timePane.innerHTML=timeStatsHtml();const cardsPane=document.createElement('section');cardsPane.className='stats-pane';cardsPane.innerHTML=managerHtml();const tabs=document.createElement('div');tabs.className='stats-tabs';tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Statistics category');['progress','ratings','time','cards'].forEach(t=>{const b=document.createElement('button');b.type='button';b.className='tool-btn'+(statsTab===t?' active':'');b.textContent=t==='cards'?'Manage cards':t[0].toUpperCase()+t.slice(1);b.setAttribute('aria-pressed',String(statsTab===t));b.onclick=()=>{statsTab=t;openStats();};tabs.append(b);});root.replaceChildren(statsTypeChips(),tabs,progressPane,ratingPane,timePane,cardsPane,dataDock);progressPane.hidden=statsTab!=='progress';ratingPane.hidden=!['ratings','time'].includes(statsTab);timePane.hidden=statsTab!=='time';cardsPane.hidden=statsTab!=='cards';if(statsTab==='time'){confidence.querySelector('h4').textContent='Time period and course area';confidence.querySelector('#rating-results').hidden=true;}root.querySelectorAll('.rating-range input').forEach((r,i)=>r.setAttribute('aria-label',i?'End date (lower slider)':'Start date (upper slider)'));if(statsTab==='cards'){renderManager();if(managerId)previewManager(managerId);}prepareScrollAreas(root);};
+const oldRefresh=refreshRatingResults;refreshRatingResults=function(){oldRefresh();const t=document.getElementById('time-results');if(t)t.innerHTML=timeStatsHtml();};
+function managerHtml(){return '<h4>Manage individual card status</h4><p>Preview cards and correct their current status without adding attempts or deleting history. Question-type filters above apply.</p><div class="manager-tools"><input id="manager-search" type="search" aria-label="Search cards" placeholder="Search question or source" oninput="managerPage=0;renderManager()"><select id="manager-filter" aria-label="Filter card status" onchange="managerPage=0;renderManager()"><option value="all">All statuses</option><option value="mastered">Mastered</option><option value="learning">Learning</option><option value="review">Needs Review</option><option value="unseen">Unseen</option></select></div><div id="manager-list" class="manager-list"></div><div class="manager-tools"><button type="button" class="tool-btn" id="manager-prev" onclick="managerPage--;renderManager()">Previous</button><span id="manager-page"></span><button type="button" class="tool-btn" id="manager-next" onclick="managerPage++;renderManager()">Next</button></div><div id="manager-preview"></div><p id="manager-message" aria-live="polite"></p>';}
+function renderManager(){const q=document.getElementById('manager-search').value.toLowerCase().trim(),status=document.getElementById('manager-filter').value,cards=statsCards().filter(c=>(status==='all'||cardStatus(c.id)===status)&&(!q||(c.qText+' '+c.source+' '+c.id).toLowerCase().includes(q)));managerPage=Math.max(0,Math.min(managerPage,Math.max(0,Math.ceil(cards.length/25)-1)));const list=document.getElementById('manager-list');list.replaceChildren();cards.slice(managerPage*25,managerPage*25+25).forEach(c=>{const b=document.createElement('button');b.type='button';b.className='tool-btn';b.textContent=(c.source||c.qText.slice(0,75)||c.id)+' · '+cardStatus(c.id);b.onclick=()=>previewManager(c.id);list.append(b);});document.getElementById('manager-page').textContent=cards.length?`${managerPage*25+1}-${Math.min(cards.length,managerPage*25+25)} of ${cards.length}`:'No matching cards';document.getElementById('manager-prev').disabled=managerPage===0;document.getElementById('manager-next').disabled=(managerPage+1)*25>=cards.length;}
+function previewManager(id){const c=byId[id];if(!c)return;managerId=id;const box=document.getElementById('manager-preview');box.className='manager-preview';box.innerHTML='<h4>'+escapeHtml(c.source||c.id)+'</h4><details open><summary>Question</summary><div class="content html">'+(c.isHTML?c.q:escapeHtml(c.q))+'</div></details><details><summary>Answer</summary><div class="content html">'+(c.isHTML?c.a:escapeHtml(c.a))+'</div></details><div class="manager-tools"><label for="manager-status">Current status</label><select id="manager-status"><option value="unseen">Unseen</option><option value="review">Needs Review</option><option value="learning">Learning</option><option value="mastered">Mastered</option></select><button type="button" class="tool-btn" onclick="saveManagerStatus()">Save status</button><button type="button" class="tool-btn" onclick="saveManagerStatus(true)">Use recorded history</button></div>';document.getElementById('manager-status').value=cardStatus(id);prepareScrollAreas(box);}
+function saveManagerStatus(clear){if(!managerId)return;const r=ensureRec(managerId);if(clear)delete r.statusOverride;else r.statusOverride=document.getElementById('manager-status').value;saveProgress();renderManager();previewManager(managerId);updateHeaderStats();updateProgress();document.getElementById('manager-message').textContent='Saved. The current queue is unchanged; new sessions use the corrected status.';}
+studyPaint();
 </script>
 </body>
 </html>
